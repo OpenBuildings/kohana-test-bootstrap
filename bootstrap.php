@@ -100,3 +100,6 @@ if ( ! defined('KOHANA_START_MEMORY'))
 
 // Bootstrap the application
 require APPPATH.'bootstrap'.EXT;
+
+chmod(APPPATH.'cache', 0777);
+chmod(APPPATH.'logs', 0777);
