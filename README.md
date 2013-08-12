@@ -4,7 +4,7 @@ For testing kohana modules individaully - a composer package holding all the koh
 
 If you want to write a module and test it independantly (via some Cloud CI for example) - then you need the kohana environment, and as its not yet in composer, it could be problematic. This adds all the kohana autoloading and cascading filesystem, as well as the core modules, which you can enable as needed. 
 
-# Usage
+## Usage
 
 As it is intended for testing its recommended that you place it in your require-dev section of the composer.json like this:
 
@@ -47,7 +47,6 @@ Kohana::$config
 		));
 ```
 
-
 An example phpunit would be:
 
 	phpunit.xml
@@ -69,3 +68,6 @@ An example phpunit would be:
 
 which assigns tests/bootstrap.php as the phpunit's bootstrap file.
 
+## Author
+
+Developed by Ivan Kerin as part of [clippings.com](http://clippings.com)
