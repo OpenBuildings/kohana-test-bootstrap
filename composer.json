@@ -1,5 +1,5 @@
 {
-    "name": "openbuildings/kohana-test-bootsrap",
+    "name": "openbuildings/kohana-test-bootstrap",
     "description": "Kohana core classes repackaged with composer, used to test modules",
     "license": "BSD-3-Clause",
     "authors": [
