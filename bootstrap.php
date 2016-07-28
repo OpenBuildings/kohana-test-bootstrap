@@ -13,7 +13,7 @@ $application = __DIR__.'/application';
  *
  * @link http://kohanaframework.org/guide/about.install#modules
  */
-$modules = __DIR__.'/modules';
+$modules = __DIR__.'/../../../modules';
 
 /**
  * The directory in which the Kohana resources are located. The system
@@ -21,7 +21,7 @@ $modules = __DIR__.'/modules';
  *
  * @link http://kohanaframework.org/guide/about.install#system
  */
-$system = __DIR__.'/system';
+$system = __DIR__.'/../../kohana/core';
 
 /**
  * The default extension of resource files. If you change this, all resources
@@ -56,18 +56,6 @@ error_reporting(E_ALL | E_STRICT);
 // Set the full path to the docroot
 define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 
-// Make the application relative to the docroot, for symlink'd index.php
-if ( ! is_dir($application) AND is_dir(DOCROOT.$application))
-	$application = DOCROOT.$application;
-
-// Make the modules relative to the docroot, for symlink'd index.php
-if ( ! is_dir($modules) AND is_dir(DOCROOT.$modules))
-	$modules = DOCROOT.$modules;
-
-// Make the system relative to the docroot, for symlink'd index.php
-if ( ! is_dir($system) AND is_dir(DOCROOT.$system))
-	$system = DOCROOT.$system;
-
 // Define the absolute paths for configured directories
 define('APPPATH', realpath($application).DIRECTORY_SEPARATOR);
 define('MODPATH', realpath($modules).DIRECTORY_SEPARATOR);
@@ -75,12 +63,6 @@ define('SYSPATH', realpath($system).DIRECTORY_SEPARATOR);
 
 // Clean up the configuration vars
 unset($application, $modules, $system);
-
-if (file_exists('install'.EXT))
-{
-	// Load the installation check
-	return include 'install'.EXT;
-}
 
 /**
  * Define the start time of the application, used for profiling.
